@@ -94,6 +94,12 @@ This project creates multiple CodePipeline pipelines, each of which will be conn
 cdk synth RepoStack
 ```
 
+Because this template will be large, you will need to run `cdk bootstrap` to create a bucket for CDK to use to store it on AWS.
+
+```
+cdk bootstrap
+```
+
 This will use `name` configured in the `demo-config.ini` file and make `count` repos for use by the CodePipeline. If you get no errors, you're good to go ahead and
 
 ```
@@ -121,6 +127,12 @@ chmod 700 repo-add-remotes.sh
 ./repo-add-remotes.sh
 ```
 
+or on Windows
+
+```
+bash -c ./repo-add-remotes.sh
+```
+
 Will add the new CodeCommit repos as remotes to this repo.
 
 #### Push the code from this repo to the CodeCommit remotes
@@ -130,6 +142,11 @@ This script will push the code in this repo to each of the CodeCommit repos.
 ```
 chmod 700 repo-push.sh
 ./repo-push.sh
+```
+or on Windows
+
+```
+bash -c ./repo-push.sh
 ```
 
 > Note this assumes you're connected via GRC, and using ap-southeast-2, so if you're not you will need to edit the script accordingly.

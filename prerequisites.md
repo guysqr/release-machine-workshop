@@ -297,3 +297,7 @@ SAM CLI, version 0.52.0
 You're now ready to start development.
 
 Please look at the [AWS documentation relevant to your OS](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html).
+
+### Enable bash on Windows
+
+There is a bash script in the next section, so make sure you can run bash scripts. [Here's a guide](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/) on how to do that.
