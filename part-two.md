@@ -105,6 +105,17 @@ The release process contains steps that
 
 ### Triggering the Release Machine
 
+#### Configuring your first release
+
+Edit `release-manifest.json` so that the names of the pipelines match the names of [your pipelines](https://ap-southeast-2.console.aws.amazon.com/codesuite/codepipeline/pipelines). If you didn't change the config in step one, these will be called "pipeline-for-workshoprepo-1" and so on.
+
+```json
+{
+  "releaseId": 5.15,
+  "pipelines": ["pipeline-for-workshoprepo-1", "pipeline-for-workshoprepo-2"]
+}
+```
+
 The Release Machine has been set up to be triggered by either writing the `release-manifest.json` file to the release manager S3 bucket, or by posting the `release-manifest.json` file's contents to the release manager API Gateway endpoint.
 
 To see the magic happen via the first method, go to [the S3 console](https://s3.console.aws.amazon.com/s3) and upload the `release-manifest.json` file from this directory to the release-manager S3 bucket that SAM has created.
@@ -139,7 +150,7 @@ The idea is that this file is generated as part of a process that determines whi
 ```json
 {
   "releaseId": 5.15,
-  "pipelines": ["pipeline-for-stepfunctions-pipeline-repo-1", "pipeline-for-stepfunctions-pipeline-repo-3"]
+  "pipelines": ["pipeline-for-workshoprepo-1", "pipeline-for-workshoprepo-3"]
 }
 ```
 
@@ -148,7 +159,7 @@ and
 ```json
 {
   "releaseId": 5.16,
-  "pipelines": ["pipeline-for-stepfunctions-pipeline-repo-2", "pipeline-for-stepfunctions-pipeline-repo-4", "pipeline-for-stepfunctions-pipeline-repo-5"]
+  "pipelines": ["pipeline-for-workshoprepo-2", "pipeline-for-workshoprepo-4", "pipeline-for-workshoprepo-5"]
 }
 ```
 
