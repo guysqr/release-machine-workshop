@@ -1,4 +1,4 @@
-# Release Manager workshop
+# Release Machine workshop
 
 Have you ever needed to coordinate deployments from multiple Git repositories at once?
 

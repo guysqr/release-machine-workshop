@@ -42,7 +42,7 @@ Configuring SAM deploy
 
         Setting default arguments for 'sam deploy'
         =========================================
-        Stack Name []: release-manager
+        Stack Name []: release-machine
         AWS Region []: ap-southeast-2
         #Shows you resources changes to be deployed and require a 'Y' to initiate deploy
         Confirm changes before deploy [Y/n]: Y
@@ -71,7 +71,7 @@ Once you hit enter you should see
 
         Deploying with following values
         ===============================
-        Stack name                 : release-manager
+        Stack name                 : release-machine
         Region                     : ap-southeast-2
         Confirm changeset          : True
         Deployment s3 bucket       : aws-sam-cli-managed-default-samclisourcebucket-178jsadhfkjhasl
@@ -118,9 +118,9 @@ Edit `release-manifest.json` so that the names of the pipelines match the names 
 
 The Release Machine has been set up to be triggered by either writing the `release-manifest.json` file to the release manager S3 bucket, or by posting the `release-manifest.json` file's contents to the release manager API Gateway endpoint.
 
-To see the magic happen via the first method, go to [the S3 console](https://s3.console.aws.amazon.com/s3) and upload the `release-manifest.json` file from this directory to the release-manager S3 bucket that SAM has created.
+To see the magic happen via the first method, go to [the S3 console](https://s3.console.aws.amazon.com/s3) and upload the `release-manifest.json` file from this directory to the release-machine S3 bucket that SAM has created.
 
-To see the magic happen via the second method, go to [the API Gateway console](https://ap-southeast-2.console.aws.amazon.com/apigateway/main/apis?region=ap-southeast-2) and click on the API called `release-manager`. Click on the word POST in the Resources list, then click TEST.
+To see the magic happen via the second method, go to [the API Gateway console](https://ap-southeast-2.console.aws.amazon.com/apigateway/main/apis?region=ap-southeast-2) and click on the API called `release-machine`. Click on the word POST in the Resources list, then click TEST.
 
 ![API Gateway test](img/api-gateway.png 'API Gateway test')
 
