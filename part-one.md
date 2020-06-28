@@ -120,7 +120,7 @@ pip install git-remote-codecommit
 
 #### Set the CodeCommit repos as remotes for this repo
 
-We need the code in the current working tree to also be pushed to these new CodeCommit repos. To do that I created two helper scripts you can run:
+We need the code in the current working tree to also be pushed to these new CodeCommit repos. To do that I created two helper scripts you can run that will add the new CodeCommit repos as remotes to this repo.
 
 ```
 chmod 700 repo-add-remotes.sh
@@ -133,7 +133,8 @@ or on Windows
 bash -c ./repo-add-remotes.sh
 ```
 
-Will add the new CodeCommit repos as remotes to this repo.
+> **Note**
+> Ensure that all text files that you need to run via bash on Windows have been set to Unix line feeds. you can do this in Notepad. This includes the config file `demo-config.ini`.
 
 #### Push the code from this repo to the CodeCommit remotes
 
@@ -143,6 +144,7 @@ This script will push the code in this repo to each of the CodeCommit repos.
 chmod 700 repo-push.sh
 ./repo-push.sh
 ```
+
 or on Windows
 
 ```

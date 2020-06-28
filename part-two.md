@@ -10,7 +10,7 @@ This SAM project will do the following:
 
 ## Prerequisites
 
-You've already [installed the SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html), right? 
+You've already [installed the SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html), right?
 
 ## Getting Started
 
@@ -21,13 +21,13 @@ git clone https://github.com/guysqr/release-machine
 cd release-machine
 ```
 
-Then you will need to run 
+Then you will need to run
 
 ```
 sam build
 ```
 
-If that worked correctly it will prompt you to do a guided deployment. You should use guided mode the first time to set various parameters, but after that you can drop the `--guided` bit off. 
+If that worked correctly it will prompt you to do a guided deployment. You should use guided mode the first time to set various parameters, but after that you can drop the `--guided` bit off.
 
 I suggest you use the same defaults I have set here.
 
@@ -56,7 +56,9 @@ Once you hit enter you should see
 
 ```
 
-        Looking for resources needed for deployment: Found!
+        Looking for resources needed for deployment: Not found.
+        Creating the required resources...
+        Successfully created!
 
                 Managed S3 bucket: aws-sam-cli-managed-default-samclisourcebucket-178onu6euafev
                 A different default S3 bucket can be set in samconfig.toml
@@ -64,7 +66,7 @@ Once you hit enter you should see
         Saved arguments to config file
         Running 'sam deploy' for future deployments will use the parameters saved above.
         The above parameters can be changed by modifying samconfig.toml
-        Learn more about samconfig.toml syntax at 
+        Learn more about samconfig.toml syntax at
         https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-config.html
 
         Deploying with following values
@@ -79,14 +81,14 @@ Once you hit enter you should see
 Initiating deployment
 =====================
 
-Waiting for changeset to be created..    
+Waiting for changeset to be created..
 ```
 
 If a changeset is created you will then get prompted to deploy it. Enter `y` to begin deployment.
 
 ## About the Release Machine
 
-The Release Machine is a software release workflow for deploying from multiple pipelines simultaneously, triggered by a `release-manifest.json` file dropped in an S3 bucket or posted to an API Gateway endpoint. 
+The Release Machine is a software release workflow for deploying from multiple pipelines simultaneously, triggered by a `release-manifest.json` file dropped in an S3 bucket or posted to an API Gateway endpoint.
 
 ![alt text](https://github.com/guysqr/release-machine/raw/master/stepfunctions_graph.svg?sanitize=true 'Successful Execution')
 
@@ -103,7 +105,7 @@ The release process contains steps that
 
 ### Triggering the Release Machine
 
-The Release Machine has been set up to be triggered by either writing the `release-manifest.json` file to the release manager S3 bucket, or by posting the `release-manifest.json` file's contents to the release manager API Gateway endpoint. 
+The Release Machine has been set up to be triggered by either writing the `release-manifest.json` file to the release manager S3 bucket, or by posting the `release-manifest.json` file's contents to the release manager API Gateway endpoint.
 
 To see the magic happen via the first method, go to [the S3 console](https://s3.console.aws.amazon.com/s3) and upload the `release-manifest.json` file from this directory to the release-manager S3 bucket that SAM has created.
 
@@ -111,7 +113,7 @@ To see the magic happen via the second method, go to [the API Gateway console](h
 
 ![API Gateway test](img/api-gateway.png 'API Gateway test')
 
-Copy the contents of the `release-manifest.json` file from this directory to your clipboard and paste it into the Request Body box then hit "Test". You should see a response body pop up that looks similar to this: 
+Copy the contents of the `release-manifest.json` file from this directory to your clipboard and paste it into the Request Body box then hit "Test". You should see a response body pop up that looks similar to this:
 
 ```
 {
@@ -128,24 +130,17 @@ The idea is that this file is generated as part of a process that determines whi
 
 ```json
 {
-    "releaseId": 5.15,
-    "pipelines": [
-        "pipeline-for-stepfunctions-pipeline-repo-1",
-        "pipeline-for-stepfunctions-pipeline-repo-3"
-    ]
+  "releaseId": 5.15,
+  "pipelines": ["pipeline-for-stepfunctions-pipeline-repo-1", "pipeline-for-stepfunctions-pipeline-repo-3"]
 }
 ```
 
-and 
+and
 
 ```json
 {
-    "releaseId": 5.16,
-    "pipelines": [
-        "pipeline-for-stepfunctions-pipeline-repo-2",
-        "pipeline-for-stepfunctions-pipeline-repo-4",
-        "pipeline-for-stepfunctions-pipeline-repo-5"
-    ]
+  "releaseId": 5.16,
+  "pipelines": ["pipeline-for-stepfunctions-pipeline-repo-2", "pipeline-for-stepfunctions-pipeline-repo-4", "pipeline-for-stepfunctions-pipeline-repo-5"]
 }
 ```
 
@@ -161,8 +156,8 @@ Go to [the DynamoDB console](https://ap-southeast-2.console.aws.amazon.com/dynam
 
 Navigate to the Trails page of the CloudTrail console and choose Create trail.
 
->**Note**
->While you can edit an existing trail to add logging data events, as a best practice, consider creating a separate trail specifically for logging data events.
+> **Note**
+> While you can edit an existing trail to add logging data events, as a best practice, consider creating a separate trail specifically for logging data events.
 
 For Data events, choose the pencil icon to enable editing then click on the S3 tab. Choose Add S3 bucket. Type the name of the release manager bucket created by SAM and specify Write events.
 
