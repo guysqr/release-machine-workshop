@@ -4,6 +4,8 @@ Have you ever needed to coordinate deployments from multiple Git repositories at
 
 In this workshop, I'll demonstrate a way to use StepFunctions (via SAM) to orchestrate a multi-component, multi-pipeline software release. Instead of triggering the pipelines individually we’ll get StepFunctions to orchestrate it for us, by reading a release manifest file that will specify the components to deploy.
 
+![alt text](https://github.com/guysqr/release-machine/raw/master/stepfunctions_graph.svg?sanitize=true 'Successful Execution')
+
 The workshop will allow you to quickly set up the multiple CodeCommit repos and CodePipeline pipelines we’ll need using python and the AWS CDK, so we recommend installing and getting those working beforehand. We will also be using SAM to build our StepFunctions and the new StepFunctions extension for VS Code. All the code needed will be provided.
 
 As all the services used are serverless, the cost of running this workshop will be minimal, but it’ll also be easy to destroy via the CDK afterwards.
