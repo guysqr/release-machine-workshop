@@ -2,7 +2,7 @@
 
 Have you ever needed to coordinate deployments from multiple Git repositories at once?
 
-In this workshop, I'll demonstrate a way to use StepFunctions (via SAM) to orchestrate a multi-component, multi-pipeline software release. Instead of triggering the pipelines individually we’ll get StepFunctions to orchestrate it for us, by reading a release manifest file that will specify the components to deploy.
+In this workshop, I'll demonstrate a way to use StepFunctions (via SAM) to orchestrate a multi-component, multi-pipeline software release. Instead of triggering the pipelines individually we’ll get StepFunctions to orchestrate it for us using [dynamic parallelism](https://aws.amazon.com/blogs/aws/new-step-functions-support-for-dynamic-parallelism/), by reading a release manifest file that will specify the components to deploy.
 
 ![alt text](https://github.com/guysqr/release-machine/raw/master/release-machine.svg?sanitize=true 'Successful Execution')
 
