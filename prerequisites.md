@@ -300,4 +300,4 @@ Please look at the [AWS documentation relevant to your OS](https://docs.aws.amaz
 
 ### Enable bash on Windows
 
-There is a bash script in the next section, so make sure you can run bash scripts. [Here's a guide](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/) on how to do that.
+There is a bash script in the next section, so if you're on Windows, make sure you can run bash scripts. [Here's a guide](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/) on how to do that.
