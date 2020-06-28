@@ -182,4 +182,7 @@ Feel free to play around with the stacks in this project to add additional infra
 - `cdk diff` compare deployed stack with current state
 - `cdk docs` open CDK documentation
 
-Enjoy!
+## Next Step
+
+[Part Two](part-two.md) - create and test the Step Functions state machine
+

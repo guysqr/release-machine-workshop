@@ -17,7 +17,9 @@ Of course, you should skip any steps for things you already have running on your
 
 We'll be using the AWS CDK for Python and AWS SAM (Serverless Application Model) CLI to build the resources for this demo.
 
-I recommend you use [VS Code](https://code.visualstudio.com/) and the [AWS Toolkit for VS Code](https://aws.amazon.com/visualstudiocode/) because it has some nice features for working with Step Functions, but you can use whatever IDE you feel comfortable with.
+I recommend you use [VS Code](https://code.visualstudio.com/) and the [AWS Toolkit for VS Code](https://aws.amazon.com/visualstudiocode/), but you can use whatever IDE you feel comfortable with.
+
+> The AWS Toolkit for VS Code includes full support for state machine visualization, enabling you to visualize your state machine in real time as you build. The AWS Toolkit for VS Code includes a language server for Amazon States Language, which lints your state machine definition to highlight common errors, provides auto-complete support, and code snippets for each state, enabling you to build state machines faster.
 
 ### Install Node.js
 
@@ -303,3 +305,7 @@ Please look at the [AWS documentation relevant to your OS](https://docs.aws.amaz
 ### Enable bash on Windows
 
 There is a bash script in the next section, so if you're on Windows, make sure you can run bash scripts. [Here's a guide](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/) on how to do that.
+
+## Next Step
+
+[Part One](part-one.md) - create the demo infrastructure

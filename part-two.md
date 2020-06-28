@@ -21,13 +21,31 @@ git clone https://github.com/guysqr/release-machine
 cd release-machine
 ```
 
-Then you will need to run
+### Project structure
+
+Release Machine follows the standard SAM project structure, and includes the following files and folders:
+
+- functions - Code for the application's Lambda functions
+- statemachine - Definition for the state machine that orchestrates the release workflow
+- template.yaml - A template that defines the application's AWS resources
+
+### How it works
+
+The SAM template `template.yaml` declares the AWS resources we'll be using, including Step Functions state machines, Lambda functions and DynamoDB tables (used to log releases and pipeline execution state).
+
+[SAM templates](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-specification.html) are essentially a special kind of CloudFormation template that allows you to use shorthand constructs that get processed into "normal" CloudFormation during deployment.
+
+The state machine JSON file is written in [Amazon States Language](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html). The Amazon States Language is a JSON-based, structured language used to define your state machine, a collection of states, that can do work (Task states), determine which states to transition to next (Choice states), stop an execution with an error (Fail states), and so on.
+
+## Let's Build!
+
+Let's get this party started. Time to run
 
 ```
 sam build
 ```
 
-If that worked correctly it will prompt you to do a guided deployment. You should use guided mode the first time to set various parameters, but after that you can drop the `--guided` bit off.
+If that worked correctly it will prompt you to do a _guided deployment_. You should use guided mode the first time to set various parameters, but after that you can drop the `--guided` bit off.
 
 I suggest you use the same defaults I have set here.
 
@@ -86,6 +104,8 @@ Waiting for changeset to be created..
 
 If a changeset is created you will then get prompted to deploy it. Enter `y` to begin deployment.
 
+While you're waiting for that to complete, let's recap what we're doing here and why:
+
 ## About the Release Machine
 
 The Release Machine is a software release workflow for deploying from multiple pipelines simultaneously, triggered by a `release-manifest.json` file dropped in an S3 bucket or posted to an API Gateway endpoint.
@@ -102,6 +122,8 @@ The release process contains steps that
 6. Fails the release if any fail to complete successfully
 
 > Note that this version does not attempt any rollbacks or pipeline execution cancellations when something fails, but these could definitely be added as steps, depending on how the deployment is done. Using CodeDeploy, for instance, stores previous releases to which Release Manager could roll back.
+
+Hopefully your infrastructure all built without issues, in which case it's now time to run it and see what happens!
 
 ### Triggering the Release Machine
 
@@ -163,27 +185,20 @@ and
 }
 ```
 
-## Project structure
+## Experimentation Zone
 
-Release Machine follows the standard SAM project structure, and includes the following files and folders:
+Once you have the above working, try the following:
 
-- functions - Code for the application's Lambda functions
-- statemachine - Definition for the state machine that orchestrates the release workflow
-- template.yaml - A template that defines the application's AWS resources
+Find the API Gateway endpoints for the Lambda functions and load them up in your browser. Try modifying the code via the CodeCommit console. The related pipelines are set up to run automatically on commit. See if you can disable the automatic deploy on commit so deployments only happen via the release machine.
 
-## How it works
+Open up the X-Ray console and see what you can see.
 
-The `template.yaml` file declares the AWS resources, including Step Functions state machines, Lambda functions and DynamoDB tables. It also sets up permissions
+Try introducing some errors - eg bad data in the `release-manaifest.json`. Try repeating the same release.
 
-The DynamoDB tables are used to log releases and pipeline execution state.
+Take a look at the `template.yaml` file and see if you can figure out what all the parts do. Try adding some more resources and see if you can deploy them as part of the stack.
 
-Resources are defined in the `template.yaml` file in this project. You can update the template to add AWS resources through the same deployment process that updates your application code.
+Take a look at the `release_manager.asl.json` file and see if you can modify it and how the linter and visualiser in VS Code works.
 
-If you prefer to use an integrated development environment (IDE) to build and test the Lambda functions within your application, you can use the AWS Toolkit. The AWS Toolkit is an open source plug-in for popular IDEs that uses the SAM CLI to build and deploy serverless applications on AWS. The AWS Toolkit also adds a simplified step-through debugging experience for Lambda function code. See the following links to get started:
+## Next Step
 
-- [PyCharm](https://docs.aws.amazon.com/toolkit-for-jetbrains/latest/userguide/welcome.html)
-- [IntelliJ](https://docs.aws.amazon.com/toolkit-for-jetbrains/latest/userguide/welcome.html)
-- [VS Code](https://docs.aws.amazon.com/toolkit-for-vscode/latest/userguide/welcome.html)
-- [Visual Studio](https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/welcome.html)
-
-The AWS Toolkit for VS Code includes full support for state machine visualization, enabling you to visualize your state machine in real time as you build. The AWS Toolkit for VS Code includes a language server for Amazon States Language, which lints your state machine definition to highlight common errors, provides auto-complete support, and code snippets for each state, enabling you to build state machines faster.
+[Tear it all down](teardown.md)
