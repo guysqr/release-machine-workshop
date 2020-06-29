@@ -59,12 +59,12 @@ $ pip install -r requirements.txt
 At this point you can now synthesize the CloudFormation template for this code.
 
 ```
-$ cdk synth PipelineDeployingLambdaStack
+$ cdk synth CdkServerlessStack
 ```
 
 ## Configuration
 
-If you were able to synth the PipelineDeployingLambdaStack then it's time to configure the project and create some AWS resources!
+If you were able to synth the CdkServerlessStack then it's time to configure the project and create some AWS resources!
 
 In the root of this directory you will see a file `demo-config.ini`. It contains the following items:
 
@@ -81,7 +81,7 @@ These are picked up and used in python and shell scripts to make getting set up 
 Once you've done that, test the synth again
 
 ```
-$ cdk synth PipelineDeployingLambdaStack
+$ cdk synth CdkServerlessStack
 ```
 
 And if everything works as expected, let's do the next step.
@@ -158,7 +158,7 @@ bash -c ./repo-push.sh
 Once you have configured your CodeCommit repos you can run the CDK deploy command for the CodePipeline stack.
 
 ```
-$ cdk deploy PipelineDeployingLambdaStack
+$ cdk deploy CdkServerlessStack
 ```
 
 Assuming the stack creates correctly, you should now have `count` pipelines in CodePipeline, all running their source, build and deploy steps. Once completed you should end up with the following resources in your account

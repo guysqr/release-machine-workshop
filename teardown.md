@@ -17,7 +17,7 @@ Once you have manually emptied the S3 buckets, head to the CloudFormation consol
 Then go into the `cdk-serverless-stack` directory on your machine and issue the following commands:
 
 ```
-cdk destroy PipelineDeployingLambdaStack
+cdk destroy CdkServerlessStack
 cdk destroy RepoStack
 ```
 
