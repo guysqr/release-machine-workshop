@@ -110,7 +110,7 @@ While you're waiting for that to complete, let's recap what we're doing here and
 
 The Release Machine is a software release workflow for deploying from multiple pipelines simultaneously, triggered by a `release-manifest.json` file dropped in an S3 bucket or posted to an API Gateway endpoint.
 
-![alt text](https://github.com/guysqr/release-machine/raw/master/stepfunctions_graph.svg?sanitize=true 'Successful Execution')
+![alt text](https://github.com/guysqr/release-machine/raw/master/release-machine.svg?sanitize=true 'Successful Execution')
 
 The release process contains steps that
 
