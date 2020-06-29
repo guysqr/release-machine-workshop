@@ -23,6 +23,7 @@ You've already [installed the CDK for python](https://docs.aws.amazon.com/cdk/la
 Clone the repo
 
 ```
+cd ~
 git clone https://github.com/guysqr/cdk-serverless-stack.git
 cd cdk-serverless-stack
 ```
@@ -34,32 +35,32 @@ This project is set up like a standard Python project. The initialization proces
 To manually create a virtualenv on MacOS and Linux:
 
 ```
-$ python3 -m venv .env
+python3 -m venv .env
 ```
 
 After the init process completes and the virtualenv is created, you can use the following
 step to activate your virtualenv.
 
 ```
-$ source .env/bin/activate
+source .env/bin/activate
 ```
 
 If you are a Windows platform, you would activate the virtualenv like this:
 
 ```
-% .env\Scripts\activate.bat
+.env\Scripts\activate.bat
 ```
 
 Once the virtualenv is activated, you can install the required dependencies.
 
 ```
-$ pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 At this point you can now synthesize the CloudFormation template for this code.
 
 ```
-$ cdk synth CdkServerlessStack
+cdk synth CdkServerlessStack
 ```
 
 ## Configuration
@@ -81,7 +82,7 @@ These are picked up and used in python and shell scripts to make getting set up 
 Once you've done that, test the synth again
 
 ```
-$ cdk synth CdkServerlessStack
+cdk synth CdkServerlessStack
 ```
 
 And if everything works as expected, let's do the next step.
@@ -158,7 +159,7 @@ bash -c ./repo-push.sh
 Once you have configured your CodeCommit repos you can run the CDK deploy command for the CodePipeline stack.
 
 ```
-$ cdk deploy CdkServerlessStack
+cdk deploy CdkServerlessStack
 ```
 
 Assuming the stack creates correctly, you should now have `count` pipelines in CodePipeline, all running their source, build and deploy steps. Once completed you should end up with the following resources in your account

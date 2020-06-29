@@ -23,23 +23,30 @@ I recommend you use [VS Code](https://code.visualstudio.com/) and the [AWS Toolk
 
 ### Install Node.js
 
-All CDK developers need to install Node.js 10.3.0 or later. It's available for all platforms here: https://nodejs.org/en/download/
+You will need to have access to Node.js 10.3.0 or later. To see if you have it installed already:
+
+```
+$ node -v
+v13.12.0
+```
 
 #### Mac users
 
-If you're on Mac OS or Linux, nvm (Node Version Manager) is a good way to install and manage Node.js: https://nodejs.org/en/download/package-manager/#nvm
+If you are installing Node.js for the first time, please [use Homebrew](https://medium.com/@hayasnc/how-to-install-nodejs-and-npm-on-mac-using-homebrew-b33780287d8f).
 
-If that seems too much like hard work, https://nodejs.org/dist/v12.18.1/node-v12.18.1.pkg
+If you're on Mac OS or Linux and need to manage multiple Node.js versions, nvm (Node Version Manager) is a good way to do that: https://nodejs.org/en/download/package-manager/#nvm
 
 #### Windows users
 
-https://nodejs.org/dist/v12.18.1/node-v12.18.1-x86.msi
+Download the current stable MSI from [the Node.js downloads page:](https://nodejs.org/en/download/)
 
 #### Linux users
 
-https://nodejs.org/dist/v12.18.1/node-v12.18.1-linux-x64.tar.xz
+Download the current stable Linux binary for your architecture from [the Node.js downloads page:](https://nodejs.org/en/download/)
 
 ### Install the AWS CLI
+
+The AWS CLI is needed for both CDK and SAM to work.
 
 #### Mac users
 
@@ -84,7 +91,7 @@ https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html
 
 ### Configure your AWS account credentials
 
-You must provide your credentials and an AWS Region to use AWS CDK, if you have not already done so. SAM needs to run as an IAM user with the AdministratorAccess policy, so make sure the user you configure here has those permissions.
+You must set up credentials and an AWS Region to use AWS CDK. SAM needs to run as an IAM user with the AdministratorAccess policy, so make sure the user you configure here has those permissions.
 
 #### Important
 
@@ -135,7 +142,13 @@ Further instructions [here](https://docs.aws.amazon.com/cdk/latest/guide/getting
 
 ### Install Python
 
-Python AWS CDK applications require Python 3.6 or later. If you don't already have it installed, download a compatible version for your platform at [python.org](python.org). If you run Linux, your system may have come with a compatible version, or you may install it using your distro's package manager (yum, apt, etc.). Mac users may be interested in Homebrew, a Linux-style package manager for Mac OS X.
+Python AWS CDK applications require Python 3.6 or later.
+
+Mac users should use Homebrew to install Python3, a Linux-style package manager for Mac OS X.
+
+Windows users can download a compatible version at [python.org](https://python.org).
+
+If you run Linux, your system may have come with a compatible version, or you may install it using your distro's package manager (yum, apt, etc.).
 
 The Python package installer, pip, and virtual environment manager, virtualenv, are also required. Windows installations of compatible Python versions include these tools. On Linux, pip and virtualenv may be provided as separate packages in your package manager. Alternatively, you may install them with the following commands:
 
