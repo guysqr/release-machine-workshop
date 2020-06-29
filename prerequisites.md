@@ -147,13 +147,17 @@ python -m pip install --upgrade virtualenv
 
 If you encounter a permission error, run the above commands using sudo (to install the modules system-wide) or add the --user flag to each command so that the modules are installed in your user directory.
 
+#### If you get stuck installing the CDK for python
+
+The AWS documentation is [here](https://docs.aws.amazon.com/cdk/latest/guide/work-with-cdk-python.html).
+
 #### Note
 
 It is common for Linux distros to use the executable name python3 for Python 3.x, and have python refer to a Python 2.x installation, and similarly for pip/pip3. You can adjust the command used to run your application by editing cdk.json in the project's main directory.
 
 Make sure the pip executable (on Windows, pip.exe) is in a directory included on the system PATH. You should be able to type `pip --version` and see its version, not an error message.
 
-#### Creating a project
+### Creating a project
 
 You create a new AWS CDK project by invoking cdk init in an empty directory.
 
@@ -243,11 +247,13 @@ If that worked, try
 cdk deploy
 ```
 
-If everything is set up correctly, CDK should deploy the sample infrastructure to the AWS account you configured in the earlier steps.
+If everything is set up correctly, CDK should deploy the sample infrastructure to the AWS account you configured in the earlier steps. Once you have checked this worked, you can use
 
-#### If you get stuck installing the CDK
+```
+cdk destroy
+```
 
-The AWS documentation is [here](https://docs.aws.amazon.com/cdk/latest/guide/work-with-cdk-python.html).
+to remove the bucket you just created.
 
 ### Install SAM
 
