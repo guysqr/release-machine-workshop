@@ -144,7 +144,7 @@ Further instructions [here](https://docs.aws.amazon.com/cdk/latest/guide/getting
 
 Python AWS CDK applications require Python 3.6 or later.
 
-Mac users should use Homebrew to install Python3, a Linux-style package manager for Mac OS X.
+Mac users should follow this link that discusses how to [use Homebrew to install Python3](https://installpython3.com/mac/).
 
 Windows users can download a compatible version at [python.org](https://python.org).
 
