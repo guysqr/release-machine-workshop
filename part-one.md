@@ -23,8 +23,8 @@ You've already [installed the CDK for python](https://docs.aws.amazon.com/cdk/la
 Clone the repo
 
 ```
-git clone https://github.com/guysqr/pipelines-demo.git
-cd pipelines-demo
+git clone https://github.com/guysqr/cdk-serverless-stack.git
+cd cdk-serverless-stack
 ```
 
 ## Running the CDK project
@@ -110,7 +110,7 @@ cdk deploy RepoStack
 
 Once you have the repos created, [go into the console](https://ap-southeast-2.console.aws.amazon.com/codesuite/codecommit/repositories?region=ap-southeast-2) and you will see a link to instructions on how to get connected to CodeCommit via HTTPS (GRC):
 
-![alt text](https://github.com/guysqr/pipelines-demo/raw/master/doc/repo-list.png 'Repo List View')
+![alt text](https://github.com/guysqr/cdk-serverless-stack/raw/master/doc/repo-list.png 'Repo List View')
 
 You will need to be using an IAM user who has CodeCommit permissions, and you will need to:
 
@@ -168,7 +168,7 @@ Assuming the stack creates correctly, you should now have `count` pipelines in C
 - `count` Lambda functions called "`project`-lambda-" followed by 8 alphanumeric random characters
 - `count` API Gateway endpoints called "`project`-api-" followed by 8 alphanumeric random characters
 
-![alt text](https://github.com/guysqr/pipelines-demo/raw/master/doc/pipeline-view.png 'Pipeline View')
+![alt text](https://github.com/guysqr/cdk-serverless-stack/raw/master/doc/pipeline-view.png 'Pipeline View')
 
 ## Hacking this project
 
@@ -185,4 +185,3 @@ Feel free to play around with the stacks in this project to add additional infra
 ## Next Step
 
 [Part Two](part-two.md) - create and test the Step Functions state machine
-

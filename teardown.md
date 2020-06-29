@@ -14,7 +14,7 @@ Make sure you **show all versions** in the release bucket, as you will need to a
 
 Once you have manually emptied the S3 buckets, head to the CloudFormation console to delete the `release-machine` stack (noting that you may have called it something different, in which case, it's whatever you called it).
 
-Then go into the `pipelines-demo` directory on your machine and issue the following commands:
+Then go into the `cdk-serverless-stack` directory on your machine and issue the following commands:
 
 ```
 cdk destroy PipelineDeployingLambdaStack
