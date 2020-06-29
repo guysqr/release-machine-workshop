@@ -1,4 +1,4 @@
-# Release Machine workshop pre-requisites
+# Release Machine workshop prerequisites
 
 This workshop uses two Git repos to set up the different infrastructure used in the demo. This guide will walk you through the steps to get set up and use them. Depending on your machine, OS and how many of these you already have installed, this might take anywhere from 10 minutes to a couple of hours to complete.
 
