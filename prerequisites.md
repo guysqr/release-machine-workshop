@@ -144,13 +144,13 @@ Further instructions [here](https://docs.aws.amazon.com/cdk/latest/guide/getting
 
 Python AWS CDK applications require Python 3.6 or later.
 
-Mac users should follow this link that discusses how to [use Homebrew to install Python3](https://installpython3.com/mac/).
+Mac users should follow this link that discusses how to [use Homebrew to install Python3](https://installpython3.com/mac/). Another tool you may consider is [pyenv](https://github.com/pyenv/pyenv), which lets you manage multiple python versions.
 
 Windows users can download a compatible version at [python.org](https://python.org).
 
 If you run Linux, your system may have come with a compatible version, or you may install it using your distro's package manager (yum, apt, etc.).
 
-The Python package installer, pip, and virtual environment manager, virtualenv, are also required. Windows installations of compatible Python versions include these tools. On Linux, pip and virtualenv may be provided as separate packages in your package manager. Alternatively, you may install them with the following commands:
+The Python package installer, pip, and a virtual environment manager (venv or virtualenv), are also required. Python versions 3.3 and above for Mac and Windows include venv. On Linux, pip and virtualenv may be provided as separate packages in your package manager. Alternatively, you may install them with the following commands:
 
 ```
 python -m ensurepip --upgrade
