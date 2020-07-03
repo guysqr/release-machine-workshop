@@ -21,6 +21,25 @@ I recommend you use [VS Code](https://code.visualstudio.com/) and the [AWS Toolk
 
 > The AWS Toolkit for VS Code includes full support for state machine visualization, enabling you to visualize your state machine in real time as you build. The AWS Toolkit for VS Code includes a language server for Amazon States Language, which lints your state machine definition to highlight common errors, provides auto-complete support, and code snippets for each state, enabling you to build state machines faster.
 
+### Mac users - install Homebrew
+
+Please [use Homebrew](https://docs.brew.sh/Installation) to install Node.js and Python.
+
+When you install HomeBrew, you may see an error like this in the console
+
+```
+fatal: cannot copy '/Library/Developer/CommandLineTools/usr/share/git-core/templates/hooks/fsmonitor-watchman.sample' to '/usr/local/Homebrew/.git/hooks/fsmonitor-watchman.sample': Permission denied
+Failed during: git init -q
+```
+
+You have to change this directory permision, so
+
+```
+sudo chown -R $USER /usr/local
+```
+
+Then run the Homebrew install script again.
+
 ### Install Node.js
 
 You will need to have access to Node.js 10.3.0 or later. To see if you have it installed already:
@@ -30,9 +49,30 @@ $ node -v
 v13.12.0
 ```
 
+If you instead see some old version of node, run
+
+```
+brew link node
+```
+
+to link instead to the new version installed by Homebrew. Note you may have to use `--overwwrite` if your old version was installed using sudo.
+
 #### Mac users
 
-If you are installing Node.js for the first time, please [use Homebrew](https://medium.com/@hayasnc/how-to-install-nodejs-and-npm-on-mac-using-homebrew-b33780287d8f).
+If you are installing Node.js for the first time, please [use Homebrew](https://docs.brew.sh/Installation).
+
+When you install HomeBrew, if you see an error like this in the console
+
+fatal: cannot copy '/Library/Developer/CommandLineTools/usr/share/git-core/templates/hooks/fsmonitor-watchman.sample' to '/usr/local/Homebrew/.git/hooks/fsmonitor-watchman.sample': Permission denied
+Failed during: git init -q
+
+You have to give this directory permision, so
+
+```
+sudo chown -R $USER /usr/local
+```
+
+Then run the Homebrew install script again.
 
 If you're on Mac OS or Linux and need to manage multiple Node.js versions, nvm (Node Version Manager) is a good way to do that: https://nodejs.org/en/download/package-manager/#nvm
 
@@ -153,9 +193,9 @@ If you run Linux, your system may have come with a compatible version, or you ma
 The Python package installer, pip, and a virtual environment manager (venv or virtualenv), are also required. Python versions 3.3 and above for Mac and Windows include venv. On Linux, pip and virtualenv may be provided as separate packages in your package manager. Alternatively, you may install them with the following commands:
 
 ```
-python -m ensurepip --upgrade
-python -m pip install --upgrade pip
-python -m pip install --upgrade virtualenv
+python3 -m ensurepip --upgrade
+python3 -m pip install --upgrade pip
+python3 -m pip install --upgrade virtualenv
 ```
 
 If you encounter a permission error, run the above commands using sudo (to install the modules system-wide) or add the --user flag to each command so that the modules are installed in your user directory.
