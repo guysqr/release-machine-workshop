@@ -100,13 +100,15 @@ This project creates multiple CodePipeline pipelines, each of which will be conn
 cdk synth RepoStack
 ```
 
-Because this template will be large, you will need to run `cdk bootstrap` to create a bucket for CDK to use to store it on AWS.
+This will use `name` configured in the `demo-config.ini` file and make `count` repos for use by the CodePipeline. If you get no errors, you're good to go.
+
+Because this template will be large, you will need to run `cdk bootstrap` to create a bucket for CDK to use to store the template on AWS.
 
 ```
 cdk bootstrap
 ```
 
-This will use `name` configured in the `demo-config.ini` file and make `count` repos for use by the CodePipeline. If you get no errors, you're good to go ahead and
+then
 
 ```
 cdk deploy RepoStack
