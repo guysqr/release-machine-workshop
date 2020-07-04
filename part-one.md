@@ -20,10 +20,15 @@ You've already [installed the CDK for python](https://docs.aws.amazon.com/cdk/la
 
 ## Getting Started
 
-Clone the repo
+Create/change to whichever directory you generally like to clone repos eg
 
 ```
-cd ~
+mkdir ~/workshop && cd ~/workshop
+```
+
+and clone the repo then cd into it
+
+```
 git clone https://github.com/guysqr/cdk-serverless-stack.git
 cd cdk-serverless-stack
 ```
@@ -54,7 +59,7 @@ If you are a Windows platform, you would activate the virtualenv like this:
 Once the virtualenv is activated, you can install the required dependencies.
 
 ```
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 At this point you can now synthesize the CloudFormation template for this code.

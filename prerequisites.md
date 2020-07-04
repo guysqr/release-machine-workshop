@@ -212,9 +212,10 @@ Make sure the pip executable (on Windows, pip.exe) is in a directory included on
 
 ### Creating a project
 
-You create a new AWS CDK project by invoking cdk init in an empty directory.
+You create a new AWS CDK project by invoking cdk init in an empty userspace directory.
 
 ```
+cd ~
 mkdir cdk-hello-world
 cd cdk-hello-world
 cdk init app --language python
@@ -244,7 +245,7 @@ Just to verify everything is working correctly, list the stacks in your app.
 cdk ls
 ```
 
-If you don't see CdkHelloWorld, make sure you named your app's directory cdk-hello-world. If you didn't, go back to Create the app and try again.
+If you don't see `cdk-hello-world`, make sure you named your app's directory cdk-hello-world. If you didn't, go back to Create the app and try again.
 
 If that worked, let's make a really simple demo. Start by installing the S3 package from the AWS Construct Library:
 
