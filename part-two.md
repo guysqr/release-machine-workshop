@@ -1,4 +1,4 @@
-# Release Manager Demo Part Two
+# Release Machine Demo Part Two
 
 The second part of the demo is the fun part. Here we're going to use AWS SAM to set up a Step Functions state machine to run our pipelines.
 
@@ -121,7 +121,7 @@ The release process contains steps that
 5. Records the release as complete if all pipelines complete successfully
 6. Fails the release if any fail to complete successfully
 
-> Note that this version does not attempt any rollbacks or pipeline execution cancellations when something fails, but these could definitely be added as steps, depending on how the deployment is done. Using CodeDeploy, for instance, stores previous releases to which Release Manager could roll back.
+> Note that this version does not attempt any rollbacks or pipeline execution cancellations when something fails, but these could definitely be added as steps, depending on how the deployment is done. Using CodeDeploy, for instance, stores previous releases to which Release Machine could roll back.
 
 Hopefully your infrastructure all built without issues, in which case it's now time to run it and see what happens!
 
@@ -140,7 +140,7 @@ Edit `release-manifest.json` so that the names of the pipelines match the names 
 }
 ```
 
-The Release Machine has been set up to be triggered by either writing the `release-manifest.json` file to the release manager S3 bucket, or by posting the `release-manifest.json` file's contents to the release manager API Gateway endpoint.
+The Release Machine has been set up to be triggered by either writing the `release-manifest.json` file to the release machine S3 bucket, or by posting the `release-manifest.json` file's contents to the release machine API Gateway endpoint.
 
 To see the magic happen via the first method, go to [the S3 console](https://s3.console.aws.amazon.com/s3) and upload the `release-manifest.json` file from this directory to the release-machine S3 bucket that SAM has created.
 
@@ -199,7 +199,7 @@ Try introducing some errors - eg bad data in the `release-manifest.json`. Try re
 
 Take a look at the `template.yaml` file and see if you can figure out what all the parts do. Try adding some more resources and see if you can deploy them as part of the stack.
 
-Take a look at the `release_manager.asl.json` file (inside the statemachine folder) and see if you can modify it and how the linter and visualiser in VS Code works.
+Take a look at the `release_machine.asl.json` file (inside the statemachine folder) and see if you can modify it and how the linter and visualiser in VS Code works.
 
 ## Next Step
 

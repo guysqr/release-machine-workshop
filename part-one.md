@@ -1,4 +1,4 @@
-# Release Manager Demo Part One
+# Release Machine Demo Part One
 
 The first part of the demo requires us to set up some repos with CD pipelines that we can use in part two. This part uses the CDK and python (and a couple of shell scripts) to create the infrastructure.
 
