@@ -16,7 +16,7 @@ The pipeline will be run whenever changes to the linked repository are committed
 
 ## Prerequisites
 
-You've already [installed the CDK for python](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html), right? Right.
+You've already [installed the CDK for python](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html), right?
 
 ## Getting Started
 
@@ -116,7 +116,9 @@ cdk deploy RepoStack
 
 #### Set up Git Remote CodeCommit
 
-Once you have the repos created, [go into the console](https://ap-southeast-2.console.aws.amazon.com/codesuite/codecommit/repositories?region=ap-southeast-2) and you will see a link to instructions on how to get connected to CodeCommit via HTTPS (GRC):
+Once you have the repos created, [go into the console](https://ap-southeast-2.console.aws.amazon.com/codesuite/codecommit/repositories?region=ap-southeast-2) and you will see a link to instructions on how to get connected to CodeCommit via HTTPS (GRC).
+
+> **NOTE** Don't follow the step on the learn more page on the AWS site that tells you to clone the repo. You only want to use GRC to push the repo you have already cloned to your new CodeCommit repos.
 
 ![alt text](https://github.com/guysqr/cdk-serverless-stack/raw/master/doc/repo-list.png 'Repo List View')
 

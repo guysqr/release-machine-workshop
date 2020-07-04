@@ -127,6 +127,8 @@ Hopefully your infrastructure all built without issues, in which case it's now t
 
 ### Triggering the Release Machine
 
+If your SAM deployment went as planned, you should be able to go to [the Step Functions console](https://ap-southeast-2.console.aws.amazon.com/states/home?region=ap-southeast-2#/statemachines) and find your state macnine "ReleaseStateMachine".
+
 #### Configuring your first release
 
 Edit `release-manifest.json` so that the names of the pipelines match the names of [your pipelines](https://ap-southeast-2.console.aws.amazon.com/codesuite/codepipeline/pipelines). If you didn't change the config in step one, these will be called "pipeline-for-workshoprepo-1" and so on.
@@ -148,7 +150,7 @@ To see the magic happen via the second method, go to [the API Gateway console](h
 
 Copy the contents of the `release-manifest.json` file from this directory to your clipboard and paste it into the Request Body box then hit "Test". You should see a response body pop up that looks similar to this:
 
-```
+```json
 {
   "executionArn": "arn:aws:states:ap-southeast-2:76332347855:execution:ReleaseStateMachine-l0NkeqrA8Z0X:bdec481c-5fac-44e9-9a26-ea234a438063",
   "startDate": 1593322928.575
@@ -193,11 +195,11 @@ Find the API Gateway endpoints for the Lambda functions and load them up in your
 
 Open up the X-Ray console and see what you can see.
 
-Try introducing some errors - eg bad data in the `release-manaifest.json`. Try repeating the same release.
+Try introducing some errors - eg bad data in the `release-manifest.json`. Try repeating the same release.
 
 Take a look at the `template.yaml` file and see if you can figure out what all the parts do. Try adding some more resources and see if you can deploy them as part of the stack.
 
-Take a look at the `release_manager.asl.json` file and see if you can modify it and how the linter and visualiser in VS Code works.
+Take a look at the `release_manager.asl.json` file (inside the statemachine folder) and see if you can modify it and how the linter and visualiser in VS Code works.
 
 ## Next Step
 
