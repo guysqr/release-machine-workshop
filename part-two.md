@@ -14,7 +14,7 @@ You've already [installed the SAM CLI](https://docs.aws.amazon.com/serverless-ap
 
 ## Getting Started
 
-Clone the repo and cd into it.
+Check your current directory (you may want to `cd ~` first) then clone the repo and cd into it.
 
 ```
 git clone https://github.com/guysqr/release-machine
