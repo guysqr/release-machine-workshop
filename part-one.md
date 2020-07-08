@@ -90,7 +90,7 @@ Once you've done that, test the synth again
 cdk synth CdkServerlessStack
 ```
 
-And if everything works as expected, let's do the next step.
+If everything works as expected, and before we `deploy CdkServerlessStack`, let's do the next setup step.
 
 ## Create the CodeCommit repositories
 
