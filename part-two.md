@@ -2,7 +2,7 @@
 
 The second part of the demo is the fun part. Here we're going to use AWS SAM to set up a Step Functions state machine to run our pipelines.
 
-SAM is great because it does a bunch of undifferentiated heavy lifting for us. When we declare AWS::Serverless::\* resources, we are taking advantage of CloudFormation macros that expand those resources to [add helpful things like roles and policies](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html) that are required to make them work.
+SAM is great because it does a bunch of undifferentiated heavy lifting for us. When we declare AWS::Serverless::\* resources, we are taking advantage of AWS-managed CloudFormation macros that expand those resources to [add helpful things like roles and policies](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html) that are required to make them work.
 
 This SAM project will do the following:
 
