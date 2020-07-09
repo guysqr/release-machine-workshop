@@ -7,8 +7,8 @@ SAM is great because it does a bunch of undifferentiated heavy lifting for us. W
 This SAM project will do the following:
 
 - Create the Step Functions state machine
-- Create the Lambda functions, S3 bucket & API gateway endpoint used by the state machine
-- Create and configure the additional services, roles and other stuff required by the State Machine
+- Create the Lambda functions, S3 bucket, Dynamo tables & API gateway endpoint used by the state machine
+- Create and configure the additional services (eg CloudTrail), roles and other stuff required by the State Machine
 
 ## Prerequisites
 
